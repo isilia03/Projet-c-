@@ -19,17 +19,29 @@ namespace Chat.Authentification
         public void AddUser(string login, string password)
         {
             users.Add(new User(login, password));
+
+            Console.WriteLine(users[0].Login);
         }
 
         //Supprimer un utilisateur
         public void RemoveUser(string login)
         {
-            users.Remove(new User(login, ""));
+            foreach (User user in users)
+            {
+                if(user.CompareTo(new User(login,""))==0)
+                {
+                    users.Remove(user);
+                    Console.WriteLine("REMOVE!!!!!!");
+                }
+            }
         }
         //Méthode d'authentification
         public void Authentify(string login, string password)
         {
-            users.Contains(new User(login, password));
+            if (users.Contains(new User(login, password)))
+            {
+                Console.WriteLine("YOUHOU");
+            }
         }
 
         //Charger le fichier des users
