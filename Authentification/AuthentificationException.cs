@@ -10,7 +10,7 @@ namespace Chat.Authentification
     {
         public string Login { get; set; }
 
-        public AuthentificationException(): base("Message random");
+        public AuthentificationException(string msg): base(msg)
         {
 
         }

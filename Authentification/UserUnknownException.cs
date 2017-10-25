@@ -8,6 +8,8 @@ namespace Chat.Authentification
 {
     class UserUnknownException : AuthentificationException
     {
-
+        public UserUnknownException(string msg):base(msg)
+        {
+        }
     }
 }

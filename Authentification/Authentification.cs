@@ -28,12 +28,13 @@ namespace Chat.Authentification
         {
             foreach (User user in users)
             {
-                if(user.CompareTo(new User(login,""))==0)
+                if (user.CompareTo(new User(login, "")) == 0)
                 {
                     users.Remove(user);
-                    Console.WriteLine("REMOVE!!!!!!");
+                    return;
                 }
             }
+            throw new UserUnknownException(login + " don't exist");
         }
         //Méthode d'authentification
         public void Authentify(string login, string password)
