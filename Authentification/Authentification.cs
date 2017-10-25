@@ -18,6 +18,13 @@ namespace Chat.Authentification
         //Ajouter un utilisateur
         public void AddUser(string login, string password)
         {
+            foreach (User user in users)
+            {
+                if (user.CompareTo(new User(login, "")) == 0)
+                {
+                    throw new UserUnknownException(login + " already exist");
+                }
+            }
             users.Add(new User(login, password));
 
             Console.WriteLine(users[0].Login);
