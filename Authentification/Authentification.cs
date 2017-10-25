@@ -35,13 +35,18 @@ namespace Chat.Authentification
                 }
             }
             throw new UserUnknownException(login + " don't exist");
-        }
+        }
         //Méthode d'authentification
         public void Authentify(string login, string password)
         {
             if (users.Contains(new User(login, password)))
             {
                 Console.WriteLine("YOUHOU");
+            }
+
+            else
+            {
+                throw new WrongPasswordException("Mot de passe incorrect");
             }
         }
 
