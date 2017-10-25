@@ -8,7 +8,10 @@ namespace Chat
 {
     class TextChatRoom : Chatroom
     {
-        string Topic;//string contenant le topic de la chatroom
+        //Propriétés
+        string Topic { get; set; }//string contenant le topic de la chatroom
+
+        //Attibuts
         List<Chatter> Chatters;//List contenant les chatters de la chatroom
 
         //Constructeur
