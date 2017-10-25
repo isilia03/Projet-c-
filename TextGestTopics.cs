@@ -1,26 +1,34 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chat
+namespace Projet
 {
     class TextGestTopics : TopicsManager
     {
-        public void CreateTopic(string topic)
+        private List<string> _topic;
+
+        TextGestTopics()
+        {
+            _topic = new List<string>();
+        }
+
+        public void createTopic(string topic)
+        {
+            _topic.Add(topic);
+            Console.WriteLine("nouveau topic créé");
+        }
+
+        public Chatroom joinTopic(string topic)
         {
             throw new NotImplementedException();
         }
 
-        public Chatroom JoinTopic(string topic)
+        public List<string> listTopic()
         {
-            throw new NotImplementedException();
-        }
-
-        public List<string> ListTopic()
-        {
-            throw new NotImplementedException();
+            return _topic;
         }
     }
 }
