@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,15 +30,13 @@ namespace Chat
         public void Join(Chatter c)
         {
             Chatters.Add(c);
-            Console.WriteLine("(Message from Chatroom : "+Topic+")"+ c.GetAlias() + "has join the room.");
+            Console.WriteLine("(Message from Chatroom : "+Topic+")"+ c.GetAlias() + " has join the room.");
         }
 
         //Post un message
         public void Post(string msg, Chatter c)
         {
-            Console.WriteLine("(At "+c.GetAlias()+") : "+c.GetAlias()+" $> " +msg);
-
-            if(Chatters.Count>1)
+            if(Chatters.Count>0)
             {
                 foreach (TextChatter chatter in Chatters)
                 {
