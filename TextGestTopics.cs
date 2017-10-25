@@ -23,7 +23,9 @@ namespace Projet
 
         public Chatroom joinTopic(string topic)
         {
-            throw new NotImplementedException();
+            TextChatRoom c = new TextChatRoom();
+            c.Topic = topic;
+            return c;
         }
 
         public List<string> listTopic()
