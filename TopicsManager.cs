@@ -8,8 +8,8 @@ namespace Projet
 {
     interface TopicsManager
     {
-         listTopic();
-        Chatroom joinTopic(String topic);
-        void createTopic(String topic);
+        List<string> ListTopic();
+        Chatroom JoinTopic(String topic);
+        void CreateTopic(String topic);
     }
 }
