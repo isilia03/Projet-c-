@@ -34,6 +34,14 @@ namespace Chat
         public void Post(string msg, Chatter c)
         {
             Console.WriteLine("(At "+c.GetAlias()+") : "+c.GetAlias()+" $> " +msg);
+
+            if(Chatters.Count>1)
+            {
+                foreach (TextChatter chatter in Chatters)
+                {
+                    chatter.ReceiveAMessage(msg, c);
+                }
+            }
         }
 
         //Quitter la chatroom
