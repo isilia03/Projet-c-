@@ -1,18 +1,18 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projet
+namespace Chat.Authentification
 {
     class AuthentificationException : Exception
     {
         public string Login { get; set; }
 
-        /*public AuthentificationException() : base("Message random");
+        public AuthentificationException(): base("Message random");
         {
-            
-        }*/
+
+        }
     }
 }
