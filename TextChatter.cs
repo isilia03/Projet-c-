@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chat
 {
-     class TextChatter : Chatter
+    class TextChatter : Chatter
     {
         string Alias;//le nom d'utilisateur du Chatter
 
@@ -25,7 +25,7 @@ namespace Chat
         //méthode recevoir un message
         public void ReceiveAMessage(string msg, Chatter c)
         {
-            
+            Console.WriteLine("(At " + Alias + ") : " + c.GetAlias() + " $> " + msg);
         }
     }
 }
