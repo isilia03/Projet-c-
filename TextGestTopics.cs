@@ -8,29 +8,35 @@ namespace Projet
 {
     class TextGestTopics : TopicsManager
     {
-        private List<string> _topic;
+        private List<string> _topics;
 
-        TextGestTopics()
+        public TextGestTopics()
         {
-            _topic = new List<string>();
+            _topics = new List<string>();
         }
 
-        public void createTopic(string topic)
+        public void CreateTopic(string topic)
         {
-            _topic.Add(topic);
+            _topics.Add(topic);
             Console.WriteLine("nouveau topic créé");
         }
 
-        public Chatroom joinTopic(string topic)
+        public Chatroom JoinTopic(string topic)
         {
             TextChatRoom c = new TextChatRoom();
             c.Topic = topic;
             return c;
         }
 
-        public List<string> listTopic()
+        public List<string> ListTopic()
         {
-            return _topic;
+            Console.WriteLine("The openned topics are: ");
+            foreach (string topic in _topics)
+            {
+                Console.WriteLine(topic);
+            }
+
+            return _topics;
         }
     }
 }
