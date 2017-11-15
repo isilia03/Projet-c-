@@ -26,8 +26,6 @@ namespace Chat.Authentification
                 }
             }
             users.Add(new User(login, password));
-
-            Console.WriteLine(users[0].Login);
         }
 
         //Supprimer un utilisateur
@@ -43,12 +41,12 @@ namespace Chat.Authentification
             }
             throw new UserUnknownException(login + " don't exist");
         }
+
         //Méthode d'authentification
         public void Authentify(string login, string password)
         {
             if (users.Contains(new User(login, password)))
             {
-                Console.WriteLine("YOUHOU");
             }
 
             else

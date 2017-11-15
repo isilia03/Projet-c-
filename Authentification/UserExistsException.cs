@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Chat.Authentification
 {
-    class WrongPasswordException : AuthentificationException
+    class UserExistsException : AuthentificationException
     {
-        public WrongPasswordException(string mgs) : base(mgs)
+        public UserExistsException(string msg):base(msg)
         {
 
         }
