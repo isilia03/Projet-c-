@@ -2,6 +2,7 @@
 using Chatprojet.Chat;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,54 +56,49 @@ namespace ChatProjet
             {
                 am.AddUser("bob", "123");
                 Console.WriteLine("Bob has been added !");
-                am.authentify("bob", "123");
+                am.Authentify("bob", "123");
                 Console.WriteLine("Authentification OK !");
-                am.authentify("bob", "456");
+                am.Authentify("bob", "456");
                 Console.WriteLine("Invalid password !");
             }
-            catch (WrongPassword e)
+            catch (WrongPasswordException e)
             {
-                System.out.println(e.login + " has provided an invalid password !");
+                Console.WriteLine(e.Login + " has provided an invalid password !");
             }
-            catch (UserExists e)
+            catch (UserExistsException e)
             {
-                System.out.println(e.login + " has already been added !");
+                Console.WriteLine(e.Login + " has already been added !");
 
             }
-            catch (UserUnknown e)
+            catch (UserUnknownException e)
             {
-                System.out.println(e.login + " : user unknown (enable to remove)
-               !");
-          }
+                Console.WriteLine(e.Login + " : user unknown (enable to remove)!");
+            }
 
             // persistance
             try
             {
-                am.save("users.txt");
+                am.Save("users.txt");
                 AuthentificationManager am1 = new Authentification();
-                am1.load("users.txt");
-                am1.authentify("bob", "123");
-                System.out.println("Loading complete !");
+                am1.Load("users.txt");
+                am1.Authentify("bob", "123");
+                Console.WriteLine("Loading complete !");
             }
-            catch (UserUnknown e)
+            catch (UserUnknownException e)
             {
-                System.out.println(e.login + " is unknown ! error during the
-               saving / loading.");
-          }
-            catch (WrongPassword e)
+                Console.WriteLine(e.Login + " is unknown ! error during the saving / loading.");
+            }
+            catch (WrongPasswordException e)
             {
-                System.out.println(e.login + " has provided an invalid password
-               !error during the saving / loading.");
-          }
+                Console.WriteLine(e.Login + " has provided an invalid password!error during the saving / loading.");
+            }
             catch (IOException e)
             {
-                System.out.println(e);
+                Console.WriteLine(e);
             }
 
-        }
 
-
-        Console.ReadLine();
+            Console.ReadLine();
         }
-}
+    }
 }
