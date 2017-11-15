@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chat.Authentification
 {
+    [Serializable]
     class User : IComparable
     {
         public string Login { get; }

@@ -56,13 +56,9 @@ namespace Chat.Authentification
         }
 
         //Charger le fichier des users
-        public static AuthentificationManager Load(String path)
+        public void Load(String path)
         {
-            Authentification a = new Authentification();
-
-            a.users = (List<User>)SerialTools.DeserializeBin(path);
-
-            return a;
+            users = (List<User>)SerialTools.DeserializeBin(path);
         }
 
         //Sauvegarde les fichiers des users
