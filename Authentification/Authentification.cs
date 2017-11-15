@@ -56,15 +56,19 @@ namespace Chat.Authentification
         }
 
         //Charger le fichier des users
-        public AuthentificationManager Load(String path)
+        public static AuthentificationManager Load(String path)
         {
-            throw new NotImplementedException();
+            Authentification a = new Authentification();
+
+            a.users = (List<User>)SerialTools.DeserializeBin(path);
+
+            return a;
         }
 
         //Sauvegarde les fichiers des users
         public void Save(String path)
         {
-            throw new NotImplementedException();
+            SerialTools.SerializeBin(path,users);
         }
     }
 }
