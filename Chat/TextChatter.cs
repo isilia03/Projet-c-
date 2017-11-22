@@ -27,5 +27,15 @@ namespace Chatprojet.Chat
         {
             Console.WriteLine("(At " + Alias + ") : " + c.GetAlias() + " $> " + msg);
         }
+
+        public void JoinNotification(Chatter c)
+        {
+            Console.WriteLine(c.GetAlias() + " join");
+        }
+
+        public void QuitNotification(Chatter c)
+        {
+            Console.WriteLine(c.GetAlias() + " quit");
+        }
     }
 }
